@@ -1,0 +1,15 @@
+requests~=2.32.3
+pyyaml~=6.0.2
+flask==3.0.0  # 用于测试服务器
+fastapi==0.110.0
+uvicorn==0.27.1
+python-dotenv~=1.1.0
+pydantic~=2.11.4
+aiohttp==3.9.3  # 用于异步 HTTP 请求
+psutil==5.9.8  # 用于系统信息获取
+motor>=3.3.2
+openai>=1.3.0 
+pymongo>=4.6.0
+httpx>=0.27.0 
+# starlette~=0.46.2
+mcp~=1.9.0

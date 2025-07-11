@@ -1,0 +1,24 @@
+mcp_servers:
+  - name: "local_sse"
+    url: "http://localhost:3002/sse"
+    api_key: "token1"
+    mode: "sse"
+    request_params:
+      channel: "default"
+    retry_interval: 3
+    max_retries: 5
+
+  - name: "sqlite"
+    mode: "stdio"
+    command: "uvx"
+    args:
+      - "mcp-server-sqlite"
+      - "--db-path"
+      - "./test.db"
+
+  - name: "puppeteer"
+    mode: "stdio"
+    command: "npx"
+    args:
+      - "-y"
+      - "@modelcontextprotocol/server-puppeteer"

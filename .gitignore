@@ -1,0 +1,11 @@
+**/.DS_Store
+__pycache__/
+.venv/
+frontend/node_modules/
+frontend/dist/
+mcp_simple_chatbot
+*.db
+node_modules/
+package-lock.json
+package.json
+.idea/
