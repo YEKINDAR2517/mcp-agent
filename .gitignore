@@ -6,6 +6,6 @@ frontend/dist/
 mcp_simple_chatbot
 *.db
 node_modules/
-package-lock.json
-package.json
+# package-lock.json
+# package.json
 .idea/
