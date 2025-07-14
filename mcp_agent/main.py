@@ -278,6 +278,14 @@ async def save_mcp_server(server: dict):
         server.pop("_id")
         col.update_one({"_id": ObjectId(_id)}, {"$set": server}, upsert=True)
     else:
+        args = server.get("args")
+        if isinstance(args, str):
+            try:
+                parsed = json.loads(args)
+                if isinstance(parsed, list):
+                    server["args"] = parsed
+            except Exception:
+                pass
         col.insert_one(server)
     return {"ok": True}
 
