@@ -22,6 +22,16 @@ MCP Agent 是一个支持多服务器并发、流式消息推送、能力扩展�
 
 ## 快速开始
 
+### 0. 配置数据库连接
+
+在首次启动前，请在项目根目录下的 `.env` 文件中，正确填写数据库连接信息，例如：
+
+```
+MONGO_URI=mongodb://admin:你的密码@localhost:27017/你的数据库?authSource=admin
+```
+
+如无 `.env` 文件，可参考下方示例自行创建，并根据实际情况修改数据库地址、用户名和密码。
+
 ### 1. 克隆项目
 ```bash
 git clone https://your.repo.url/mcp-agent.git
