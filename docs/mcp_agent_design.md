@@ -127,8 +127,8 @@ class MCPFunctions:
 
 ### 1. 环境变量配置 (.env)
 ```env
-OPENAI_API_KEY=your_api_key
-OPENAI_API_BASE=https://api.openai.com/v1
+API_KEY=your_api_key
+BASE_URL=https://api.openai.com/v1
 ```
 
 ### 2. MCP Server 配置 (config.yaml)

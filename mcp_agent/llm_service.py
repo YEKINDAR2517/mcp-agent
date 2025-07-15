@@ -74,8 +74,8 @@ class LLMService:
     def __init__(self, server_dao: MCPServerDAO):
         self.server_dao = server_dao
         self.client = openai.OpenAI(
-            api_key=os.getenv("OPENAI_API_KEY"),
-            base_url=os.getenv("OPENAI_API_BASE", "https://api.openai.com/v1")
+            api_key=os.getenv("API_KEY"),
+            base_url=os.getenv("BASE_URL", "https://api.openai.com/v1")
         )
         self._function_prompt = None
         self.mcp_servers: Dict[str, SSEMCPServer | StdioMCPServer] = {}
@@ -266,7 +266,7 @@ class LLMService:
         # 如果没有可用工具，直接用 LLM 聊天
         if not tools:
             response = self.client.chat.completions.create(
-                model=os.getenv("OPENAI_MODEL"),
+                model=os.getenv("MODEL"),
                 messages=messages,
                 stream=True
             )
@@ -323,7 +323,7 @@ class LLMService:
                 # logger.info(f"当前messages: {json.dumps(messages, ensure_ascii=False, indent=2)}")
                 has_tool_calls = False
                 response = self.client.chat.completions.create(
-                    model=os.getenv("OPENAI_MODEL"),
+                    model=os.getenv("MODEL"),
                     messages=messages,
                     functions=openai_tools,
                     stream=True

@@ -82,8 +82,8 @@ pip install -r requirements.txt
 1. 创建 `.env` 文件：
 
 ```env
-OPENAI_API_KEY=your_api_key
-OPENAI_API_BASE=https://api.openai.com/v1
+API_KEY=your_api_key
+BASE_URL=https://api.openai.com/v1
 ```
 
 2. 配置 `config.yaml`：
@@ -238,8 +238,8 @@ python mcp_agent/main.py
 请确保 `.env` 文件中包含如下内容（示例）：
 
 ```
-OPENAI_API_KEY=sk-xxxxxxx
-OPENAI_MODEL=gpt-3.5-turbo
+API_KEY=sk-xxxxxxx
+MODEL=gpt-3.5-turbo
 MONGO_URI=mongodb://admin:prHtDGq3xjbHnecU@localhost:27017/sse-agent-demo?authSource=admin
 ```
 
