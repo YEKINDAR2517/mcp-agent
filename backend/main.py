@@ -231,13 +231,15 @@ async def get_chat_completion_status(chat_id: str):
             content = task.get("content", "")
             if content != last_content:
                 last_content = content
-                yield f'data: {json.dumps({ 
+                data = {
                     "id": f"{chat_id}-generating",
                     "role": "assistant",
                     "content": content,
                     "timestamp": None,
                     "loading": True
-                }, ensure_ascii=False)}\n\n'
+                }
+                json_str = json.dumps(data, ensure_ascii=False)
+                yield f"data: {json_str}\n\n"
             await asyncio.sleep(0.5)  # 降低频率，减少CPU占用
         # 3. 结束标记
         yield 'data: {"finish": true}\n\n'
